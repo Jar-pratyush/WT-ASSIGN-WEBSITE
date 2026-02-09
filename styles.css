@@ -1,0 +1,253 @@
+/* --- GLOBAL RESET (FIXES SPACING ISSUES) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Setup */
+body {
+    font-family: sans-serif;
+    background-color: lightgoldenrodyellow;
+    
+    /* Sticky Footer Setup */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures body stretches to full screen height */
+}
+
+/* Header Styling */
+.header {
+    background-color: #3e2723;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px; /* Space below header */
+    border-bottom: 3px solid orange;
+}
+
+.header h1 {
+    margin-bottom: 10px;
+    color: #ffcc00;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    display: inline-block; /* Helps with padding/margins */
+}
+
+.nav-links a:hover {
+    color: orange;
+}
+
+.active {
+    font-weight: bold;
+    text-decoration: underline;
+    color: orange !important;
+}
+
+/* Main Layout */
+.main-wrapper {
+    flex: 1; /* This pushes the footer to the bottom */
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    align-self: center; /* Centers wrapper if screen is huge */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Card Design */
+.card {
+    background-color: white;
+    border: 1px solid #cbb26a;
+    padding: 30px;
+    width: 48%;
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px rgba(62, 39, 35, 0.2);
+}
+
+h2 {
+    border-bottom: 2px dashed #8d6e63;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    color: #3e2723;
+    text-align: center;
+}
+
+/* Inputs */
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: orange;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #4e342e;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#btn-reserve, #btn-contact {
+    background-color: #d35400; /* Orange */
+    color: white;
+}
+
+#btn-add {
+    background-color: #3e2723; /* Brown */
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Bottom Section (List) */
+.bottom-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    border-top: 5px solid #3e2723;
+    margin-top: 20px;
+}
+
+.grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.item {
+    background-color: #fff8e1;
+    padding: 15px;
+    border: 1px solid #ffe082;
+    border-left: 4px solid #d35400;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.del-btn {
+    background-color: #c0392b;
+    color: white;
+    width: auto; /* Override full width */
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+/* --- CONTACT PAGE STYLES --- */
+.contact-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px;
+    border: 1px solid #cbb26a;
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px rgba(62, 39, 35, 0.2);
+}
+
+.contact-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.contact-table td {
+    padding: 10px;
+    vertical-align: top;
+}
+
+.tbl-label {
+    width: 30%;
+    font-weight: bold;
+    color: #3e2723;
+    text-align: right;
+    padding-right: 20px;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #3e2723;
+    color: #ddd;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: auto; /* Ensures footer stays at bottom if content is short */
+    border-top: 4px solid orange;
+}
+
+.footer p {
+    margin-bottom: 10px; /* Small gap between lines */
+}
+
+/* Removes gap from last item in footer */
+.footer p:last-child {
+    margin-bottom: 0;
+}
+
+.footer a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+.warning {
+    color: #ffab91;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    /* Stacking Order: Add Form (Right) goes on top of Reservation (Left) */
+    #left-box { order: 2; }
+    #right-box { order: 1; }
+    
+    .contact-container {
+        padding: 20px;
+    }
+    
+    /* Make table rows stack vertically on phone */
+    .contact-table, .contact-table tbody, .contact-table tr, .contact-table td {
+        display: block;
+        width: 100%;
+    }
+    
+    .tbl-label {
+        text-align: left;
+        padding-bottom: 5px;
+    }
+}

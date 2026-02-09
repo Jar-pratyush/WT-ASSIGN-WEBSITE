@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Restaurant Project</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Table Bookings & Co.</h1>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="restaurants.html">Restaurants</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="main-wrapper">
+      <div class="container">
+        <div class="card" id="left-box">
+          <h2>Make a Reservation</h2>
+          <form id="form1">
+            <label>Restaurant:</label>
+            <select id="restSelect">
+              <option value="">-- Select --</option>
+              <option value="Pasta Palace">Pasta Palace</option>
+              <option value="Burger Barn">Burger Barn</option>
+              <option value="Curry Corner">Curry Corner</option>
+              <option value="Sushi Spot">Sushi Spot</option>
+              <option value="Taco Time">Taco Time</option>
+              <option value="Dragon Wok">Dragon Wok</option>
+            </select>
+
+            <input type="text" id="uName" placeholder="Username" required />
+            <input type="text" id="fName" placeholder="Full Name" required />
+            <input type="text" id="email" placeholder="Email" required />
+            <input type="text" id="phone" placeholder="Phone Number" required />
+            <textarea
+              id="address"
+              placeholder="Address"
+              rows="2"
+              required
+            ></textarea>
+            <input type="text" id="pin" placeholder="Pin Code" required />
+
+            <button type="submit" id="btn-reserve">Reserve Now</button>
+          </form>
+        </div>
+
+        <div class="card" id="right-box">
+          <h2>Add New Restaurant</h2>
+          <p>Can't find a place? Add details below.</p>
+          <form id="form2">
+            <label>Details:</label>
+            <input type="text" id="newRestName" placeholder="Restaurant Name" />
+            <input type="text" id="newPhone" placeholder="Contact No." />
+            <input type="text" id="newCuisine" placeholder="Cuisine Type" />
+            <input type="text" id="newLoc" placeholder="Location" />
+            <button type="submit" id="btn-add">Add Restaurant</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="bottom-box">
+        <h3>Newly Added Restaurants</h3>
+        <p>Restaurants added in this session:</p>
+        <div id="list-area" class="grid-list"></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <h4>Table Bookings & Co.</h4>
+      <p>Developed by <span>Pratyush Raj</span></p>
+      <p>
+        Email:
+        <a href="mailto:support@tablebookings.com">rajpratyush0902@gmail.com</a>
+      </p>
+      <p>
+        <a href="https://github.com/Jar-pratyush" target="_blank">GitHub</a> |
+        <a
+          href="https://www.linkedin.com/in/pratyush-raj-45b022294/"
+          target="_blank"
+          >LinkedIn</a
+        >
+      </p>
+      <p class="warning">
+        Server and Database integration Coming soon, stay tuned
+      </p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
