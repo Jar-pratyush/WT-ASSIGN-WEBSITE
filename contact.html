@@ -1,11 +1,16 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Project | Contact Us</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="logo-bar top-bar">
+      <img src="logo.png" alt="University Logo" class="site-logo" />
+    </div>
+
     <div class="header">
       <h1>Table Bookings & Co.</h1>
       <div class="nav-links">
@@ -18,84 +23,66 @@
     <div class="main-wrapper">
       <div class="contact-container">
         <h2>Contact Support</h2>
-        <p style="text-align: center; margin-bottom: 20px">
-          Have an issue? Fill out the details below.
+        <p>
+          Experiencing an issue or have a question? Fill out the details below
+          and our team will reach out.
         </p>
 
         <form id="contactForm">
-          <table class="contact-table">
-            <tr>
-              <td class="tbl-label">Name:</td>
-              <td class="tbl-input">
-                <input
-                  type="text"
-                  id="cName"
-                  placeholder="Your Full Name"
-                  required
-                />
-              </td>
-            </tr>
+          <div class="form-group">
+            <label for="cName">Full Name</label>
+            <input
+              type="text"
+              id="cName"
+              placeholder="e.g. John Doe"
+              required
+            />
+          </div>
 
-            <tr>
-              <td class="tbl-label">Email:</td>
-              <td class="tbl-input">
-                <input
-                  type="text"
-                  id="cEmail"
-                  placeholder="your@email.com"
-                  required
-                />
-              </td>
-            </tr>
+          <div class="form-group">
+            <label for="cEmail">Email Address</label>
+            <input
+              type="email"
+              id="cEmail"
+              placeholder="your@email.com"
+              required
+            />
+          </div>
 
-            <tr>
-              <td class="tbl-label">Phone Number:</td>
-              <td class="tbl-input">
-                <input
-                  type="text"
-                  id="cPhone"
-                  placeholder="10-digit Number"
-                  required
-                />
-              </td>
-            </tr>
+          <div class="form-group">
+            <label for="cPhone">Phone Number</label>
+            <input
+              type="tel"
+              id="cPhone"
+              placeholder="10-digit Number"
+              required
+            />
+          </div>
 
-            <tr>
-              <td class="tbl-label">Address:</td>
-              <td class="tbl-input">
-                <textarea
-                  id="cAddress"
-                  rows="2"
-                  placeholder="Your Address"
-                ></textarea>
-              </td>
-            </tr>
+          <div class="form-group">
+            <label for="cAddress">Address</label>
+            <textarea
+              id="cAddress"
+              rows="2"
+              placeholder="Your current address"
+            ></textarea>
+          </div>
 
-            <tr>
-              <td class="tbl-label">Pin Code:</td>
-              <td class="tbl-input">
-                <input type="text" id="cPin" placeholder="6-digit Pin" />
-              </td>
-            </tr>
+          <div class="form-group">
+            <label for="cPin">Pin Code</label>
+            <input type="text" id="cPin" placeholder="6-digit Postal Code" />
+          </div>
 
-            <tr>
-              <td class="tbl-label">Issue:</td>
-              <td class="tbl-input">
-                <textarea
-                  id="cIssue"
-                  rows="3"
-                  placeholder="Describe your issue..."
-                ></textarea>
-              </td>
-            </tr>
+          <div class="form-group">
+            <label for="cIssue">Describe Your Issue</label>
+            <textarea
+              id="cIssue"
+              rows="4"
+              placeholder="Please provide details about your issue..."
+            ></textarea>
+          </div>
 
-            <tr>
-              <td></td>
-              <td>
-                <button type="submit" id="btn-contact">Submit Query</button>
-              </td>
-            </tr>
-          </table>
+          <button type="submit" id="btn-contact">Submit Query</button>
         </form>
       </div>
     </div>
@@ -105,7 +92,7 @@
       <p>Developed by <span>Pratyush Raj</span></p>
       <p>
         Email:
-        <a href="mailto:support@tablebookings.com">rajpratyush0902@gmail.com</a>
+        <a href="mailto:rajpratyush0902@gmail.com">rajpratyush0902@gmail.com</a>
       </p>
       <p>
         <a href="https://github.com/Jar-pratyush" target="_blank">GitHub</a> |
@@ -118,6 +105,10 @@
       <p class="warning">
         Server and Database integration Coming soon, stay tuned
       </p>
+    </div>
+
+    <div class="logo-bar bottom-bar">
+      <img src="logo.png" alt="University Logo" class="site-logo footer-logo" />
     </div>
 
     <script src="script.js"></script>

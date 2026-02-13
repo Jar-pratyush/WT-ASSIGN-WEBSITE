@@ -1,46 +1,16 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <title>Restaurant List</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      .rest-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      .rest-card {
-        background-color: white;
-        width: 260px;
-        border-radius: 10px;
-        overflow: hidden;
-        border: 1px solid #ead18f;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-      .rest-card img {
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-      }
-      .info {
-        padding: 15px;
-        text-align: center;
-      }
-      .badge {
-        background-color: #3e2723;
-        color: #ffcc00;
-        padding: 5px 10px;
-        border-radius: 15px;
-        font-size: 12px;
-        font-weight: bold;
-      }
-    </style>
+    <title>Restaurant Project | Partner Restaurants</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="logo-bar top-bar">
+      <img src="logo.png" alt="University Logo" class="site-logo" />
+    </div>
+
     <div class="header">
       <h1>Our Partner Restaurants</h1>
       <div class="nav-links">
@@ -55,72 +25,79 @@
         <div class="rest-card">
           <img
             src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-4.0.3&w=800"
+            alt="Pasta Palace"
           />
           <div class="info">
             <h3>Pasta Palace</h3>
-            <p>Italian food</p>
-            <span class="badge">ITALIAN</span>
+            <p>Authentic Italian</p>
+            <span class="badge">Italian</span>
           </div>
         </div>
 
         <div class="rest-card">
           <img
             src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&w=800"
+            alt="Burger Barn"
           />
           <div class="info">
             <h3>Burger Barn</h3>
-            <p>Tasty Burgers</p>
-            <span class="badge">AMERICAN</span>
+            <p>Gourmet Burgers</p>
+            <span class="badge">American</span>
           </div>
         </div>
 
         <div class="rest-card">
           <img
             src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&w=800"
+            alt="Curry Corner"
           />
           <div class="info">
             <h3>Curry Corner</h3>
-            <p>Spicy Indian</p>
-            <span class="badge">INDIAN</span>
+            <p>Rich Spices</p>
+            <span class="badge">Indian</span>
           </div>
         </div>
 
         <div class="rest-card">
           <img
             src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?ixlib=rb-4.0.3&w=800"
+            alt="Sushi Spot"
           />
           <div class="info">
             <h3>Sushi Spot</h3>
-            <p>Fresh Sushi</p>
-            <span class="badge">JAPANESE</span>
+            <p>Fresh Seafood</p>
+            <span class="badge">Japanese</span>
           </div>
         </div>
 
         <div class="rest-card">
           <img
             src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?ixlib=rb-4.0.3&w=800"
+            alt="Taco Time"
           />
           <div class="info">
             <h3>Taco Time</h3>
-            <p>Mexican Tacos</p>
-            <span class="badge">MEXICAN</span>
+            <p>Street Style Tacos</p>
+            <span class="badge">Mexican</span>
           </div>
         </div>
 
         <div class="rest-card">
           <img
             src="https://images.unsplash.com/photo-1512058564366-18510be2db19?ixlib=rb-4.0.3&w=800"
+            alt="Dragon Wok"
           />
           <div class="info">
             <h3>Dragon Wok</h3>
-            <p>Chinese Noodles</p>
-            <span class="badge">CHINESE</span>
+            <p>Noodles & Dim Sum</p>
+            <span class="badge">Chinese</span>
           </div>
         </div>
 
         <div class="rest-card">
           <img
             src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?ixlib=rb-4.0.3&w=800"
+            alt="BBQ Bros"
           />
           <div class="info">
             <h3>BBQ Bros</h3>
@@ -132,11 +109,12 @@
         <div class="rest-card">
           <img
             src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&w=800"
+            alt="Green Garden"
           />
           <div class="info">
             <h3>Green Garden</h3>
             <p>Vegan Salads</p>
-            <span class="badge">VEGAN</span>
+            <span class="badge">Vegan</span>
           </div>
         </div>
       </div>
@@ -147,7 +125,7 @@
       <p>Developed by <span>Pratyush Raj</span></p>
       <p>
         Email:
-        <a href="mailto:support@tablebookings.com">rajpratyush0902@gmail.com</a>
+        <a href="mailto:rajpratyush0902@gmail.com">rajpratyush0902@gmail.com</a>
       </p>
       <p>
         <a href="https://github.com/Jar-pratyush" target="_blank">GitHub</a> |
@@ -160,6 +138,10 @@
       <p class="warning">
         Server and Database integration Coming soon, stay tuned
       </p>
+    </div>
+
+    <div class="logo-bar bottom-bar">
+      <img src="logo.png" alt="University Logo" class="site-logo footer-logo" />
     </div>
   </body>
 </html>

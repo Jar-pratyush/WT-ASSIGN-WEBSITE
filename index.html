@@ -1,11 +1,16 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <title>Restaurant Project</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Project | Home</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="logo-bar top-bar">
+      <img src="logo.png" alt="University Logo" class="site-logo" />
+    </div>
+
     <div class="header">
       <h1>Table Bookings & Co.</h1>
       <div class="nav-links">
@@ -20,9 +25,9 @@
         <div class="card" id="left-box">
           <h2>Make a Reservation</h2>
           <form id="form1">
-            <label>Restaurant:</label>
+            <label for="restSelect">Select Restaurant</label>
             <select id="restSelect">
-              <option value="">-- Select --</option>
+              <option value="">-- Select a location --</option>
               <option value="Pasta Palace">Pasta Palace</option>
               <option value="Burger Barn">Burger Barn</option>
               <option value="Curry Corner">Curry Corner</option>
@@ -33,37 +38,67 @@
 
             <input type="text" id="uName" placeholder="Username" required />
             <input type="text" id="fName" placeholder="Full Name" required />
-            <input type="text" id="email" placeholder="Email" required />
-            <input type="text" id="phone" placeholder="Phone Number" required />
+            <input
+              type="email"
+              id="email"
+              placeholder="Email Address"
+              required
+            />
+            <input
+              type="tel"
+              id="phone"
+              placeholder="Phone Number (10 digits)"
+              required
+            />
             <textarea
               id="address"
-              placeholder="Address"
+              placeholder="Full Address"
               rows="2"
               required
             ></textarea>
             <input type="text" id="pin" placeholder="Pin Code" required />
 
-            <button type="submit" id="btn-reserve">Reserve Now</button>
+            <button type="submit" id="btn-reserve">Reserve Table Now</button>
           </form>
         </div>
 
         <div class="card" id="right-box">
           <h2>Add New Restaurant</h2>
-          <p>Can't find a place? Add details below.</p>
+          <p>Can't find a place? Help us expand our list.</p>
           <form id="form2">
-            <label>Details:</label>
-            <input type="text" id="newRestName" placeholder="Restaurant Name" />
-            <input type="text" id="newPhone" placeholder="Contact No." />
-            <input type="text" id="newCuisine" placeholder="Cuisine Type" />
-            <input type="text" id="newLoc" placeholder="Location" />
-            <button type="submit" id="btn-add">Add Restaurant</button>
+            <input
+              type="text"
+              id="newRestName"
+              placeholder="Restaurant Name"
+              required
+            />
+            <input
+              type="tel"
+              id="newPhone"
+              placeholder="Contact No."
+              required
+            />
+            <input
+              type="text"
+              id="newCuisine"
+              placeholder="Cuisine Type"
+              required
+            />
+            <input
+              type="text"
+              id="newLoc"
+              placeholder="City / Location"
+              required
+            />
+
+            <button type="submit" id="btn-add">Add to Network</button>
           </form>
         </div>
       </div>
 
       <div class="bottom-box">
         <h3>Newly Added Restaurants</h3>
-        <p>Restaurants added in this session:</p>
+        <p>Restaurants submitted by users during this session:</p>
         <div id="list-area" class="grid-list"></div>
       </div>
     </div>
@@ -73,7 +108,7 @@
       <p>Developed by <span>Pratyush Raj</span></p>
       <p>
         Email:
-        <a href="mailto:support@tablebookings.com">rajpratyush0902@gmail.com</a>
+        <a href="mailto:rajpratyush0902@gmail.com">rajpratyush0902@gmail.com</a>
       </p>
       <p>
         <a href="https://github.com/Jar-pratyush" target="_blank">GitHub</a> |
@@ -86,6 +121,10 @@
       <p class="warning">
         Server and Database integration Coming soon, stay tuned
       </p>
+    </div>
+
+    <div class="logo-bar bottom-bar">
+      <img src="logo.png" alt="University Logo" class="site-logo footer-logo" />
     </div>
 
     <script src="script.js"></script>

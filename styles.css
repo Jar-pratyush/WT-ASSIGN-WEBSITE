@@ -1,61 +1,131 @@
-/* --- GLOBAL RESET (FIXES SPACING ISSUES) --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* --- GLOBAL RESET & VARIABLES --- */
+:root {
+    /* Beautiful Ocean Gradient Background */
+    --bg-gradient: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%); 
+    
+    --secondary: #0f2c59; 
+    
+    /* Fiery Orange Gradient for Buttons */
+    --btn-gradient: linear-gradient(135deg, #ff7b00 0%, #e65c00 100%);
+    --btn-hover: linear-gradient(135deg, #ff9500 0%, #ff7b00 100%);
+    
+    /* Frosted Glass Variables */
+    --glass-bg: rgba(255, 255, 255, 0.92);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    
+    --text-main: #2c3e50;
+    --text-muted: #5d6d7e;
+    --border-color: #d5d8dc;
+    
+    /* Smoother, deeper shadows */
+    --shadow-sm: 0 4px 15px rgba(0,0,0,0.05);
+    --shadow-md: 0 15px 35px rgba(0, 0, 0, 0.15);
+    --shadow-hover: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* General Setup */
 body {
-    font-family: sans-serif;
-    background-color: lightgoldenrodyellow;
-    
-    /* Sticky Footer Setup */
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-gradient);
+    background-attachment: fixed; /* Keeps gradient stationary while scrolling */
+    color: var(--text-main);
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures body stretches to full screen height */
+    min-height: 100vh;
 }
 
-/* Header Styling */
+/* --- ENTRANCE ANIMATION --- */
+@keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- DEDICATED LOGO BARS --- */
+.logo-bar {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 15px 20px;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.top-bar { box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.bottom-bar { box-shadow: 0 -2px 10px rgba(0,0,0,0.1); }
+
+.site-logo {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.footer-logo { max-width: 150px; }
+
+/* --- HEADER --- */
 .header {
-    background-color: #3e2723;
+    background-color: var(--secondary);
+    background-image: linear-gradient(to right, #0f2c59, #1a4a8c);
     color: white;
     text-align: center;
-    padding: 20px;
-    margin-bottom: 30px; /* Space below header */
-    border-bottom: 3px solid orange;
+    padding: 30px 20px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow-md);
 }
 
 .header h1 {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     color: #ffcc00;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
 }
 
 .nav-links a {
-    color: white;
+    color: rgba(255,255,255,0.7);
     text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
-    display: inline-block; /* Helps with padding/margins */
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
 }
 
 .nav-links a:hover {
-    color: orange;
+    color: white;
+    transform: translateY(-2px);
 }
 
-.active {
-    font-weight: bold;
-    text-decoration: underline;
-    color: orange !important;
+.nav-links a.active {
+    color: white !important;
+    background: rgba(255,255,255,0.15);
+    font-weight: 600;
+    box-shadow: inset 0 0 10px rgba(255,255,255,0.1);
 }
 
-/* Main Layout */
+/* --- MAIN LAYOUT --- */
 .main-wrapper {
-    flex: 1; /* This pushes the footer to the bottom */
-    padding: 20px;
+    flex: 1;
+    padding: 0 20px 40px 20px;
     width: 100%;
-    max-width: 1200px;
-    align-self: center; /* Centers wrapper if screen is huge */
+    max-width: 1100px;
+    align-self: center;
+    animation: fadeSlideUp 0.8s ease-out forwards; /* Applies the animation */
 }
 
 .container {
@@ -65,189 +135,254 @@ body {
     margin-bottom: 40px;
 }
 
-/* Card Design */
-.card {
-    background-color: white;
-    border: 1px solid #cbb26a;
-    padding: 30px;
-    width: 48%;
-    border-radius: 8px;
-    box-shadow: 5px 5px 15px rgba(62, 39, 35, 0.2);
+/* --- FROSTED GLASS CARDS --- */
+.card, .contact-container, .bottom-box {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px); /* Creates the frosted glass effect */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
 }
 
-h2 {
-    border-bottom: 2px dashed #8d6e63;
+.card { width: 48%; }
+
+h2, h3 {
+    color: var(--secondary);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.card h2 {
+    border-bottom: 2px dashed rgba(15, 44, 89, 0.2);
     padding-bottom: 15px;
-    margin-bottom: 25px;
-    color: #3e2723;
+    margin-bottom: 30px;
     text-align: center;
 }
 
-/* Inputs */
+.card p, .contact-container p {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+    font-size: 14.5px;
+    line-height: 1.6;
+}
+
+/* --- FORMS & INPUTS --- */
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+    color: var(--secondary);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 input, select, textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 14px 18px;
+    margin-bottom: 22px;
+    border: 1.5px solid var(--border-color);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 input:focus, select:focus, textarea:focus {
     outline: none;
-    border-color: orange;
+    border-color: #00b4d8;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.15);
+    transform: translateY(-1px);
 }
 
-label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-    color: #4e342e;
-}
-
-/* Buttons */
+/* --- BUTTONS --- */
 button {
     width: 100%;
-    padding: 12px;
+    padding: 16px;
     border: none;
-    border-radius: 4px;
+    border-radius: 12px;
     font-size: 16px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 #btn-reserve, #btn-contact {
-    background-color: #d35400; /* Orange */
+    background: var(--btn-gradient);
     color: white;
+    box-shadow: 0 4px 15px rgba(230, 92, 0, 0.3);
+}
+
+#btn-reserve:hover, #btn-contact:hover {
+    background: var(--btn-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(230, 92, 0, 0.4);
 }
 
 #btn-add {
-    background-color: #3e2723; /* Brown */
+    background-color: var(--secondary);
     color: white;
+    margin-top: 10px;
 }
 
-button:hover {
-    opacity: 0.9;
+#btn-add:hover {
+    background-color: #0a1f3f; 
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(15, 44, 89, 0.3);
 }
 
-/* Bottom Section (List) */
+/* --- RESTAURANT GRID (restaurants.html) --- */
+.rest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.rest-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.rest-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+}
+
+.rest-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.info { padding: 22px; text-align: center; }
+
+.info h3 { margin-bottom: 8px; font-size: 19px; color: var(--secondary); }
+
+.info p { color: var(--text-muted); font-size: 14px; margin-bottom: 18px; }
+
+.badge {
+    background: linear-gradient(135deg, #0f2c59, #1a4a8c);
+    color: #ffcc00;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 8px rgba(15, 44, 89, 0.2);
+}
+
+/* --- BOTTOM LIST (index.html) --- */
 .bottom-box {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    border-top: 5px solid #3e2723;
-    margin-top: 20px;
+    padding: 35px 45px;
+    text-align: center;
 }
 
 .grid-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 15px;
+    gap: 20px;
+    text-align: left;
 }
 
 .item {
-    background-color: #fff8e1;
-    padding: 15px;
-    border: 1px solid #ffe082;
-    border-left: 4px solid #d35400;
-    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 18px 22px;
+    border: 1px solid rgba(255,255,255,0.9);
+    border-left: 5px solid #ff7b00;
+    border-radius: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.item:hover {
+    transform: translateX(5px);
 }
 
 .del-btn {
-    background-color: #c0392b;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
     color: white;
-    width: auto; /* Override full width */
-    padding: 5px 10px;
-    font-size: 14px;
-}
-
-/* --- CONTACT PAGE STYLES --- */
-.contact-container {
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
-    background-color: white;
-    padding: 40px;
-    border: 1px solid #cbb26a;
+    width: auto;
+    padding: 8px 14px;
+    font-size: 13px;
     border-radius: 8px;
-    box-shadow: 5px 5px 15px rgba(62, 39, 35, 0.2);
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
 }
 
-.contact-table {
-    width: 100%;
-    border-collapse: collapse;
+.del-btn:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
 }
 
-.contact-table td {
-    padding: 10px;
-    vertical-align: top;
+/* --- CONTACT PAGE --- */
+.contact-container {
+    max-width: 650px;
+    margin: 0 auto;
 }
 
-.tbl-label {
-    width: 30%;
-    font-weight: bold;
-    color: #3e2723;
-    text-align: right;
-    padding-right: 20px;
-}
+.form-group { margin-bottom: 22px; }
 
-/* Footer Styling */
+/* --- FOOTER --- */
 .footer {
-    background-color: #3e2723;
-    color: #ddd;
+    background-color: var(--secondary);
+    background-image: linear-gradient(to right, #0f2c59, #1a4a8c);
+    color: #e0e0e0;
     text-align: center;
-    padding: 30px 20px;
-    margin-top: auto; /* Ensures footer stays at bottom if content is short */
-    border-top: 4px solid orange;
+    padding: 45px 20px;
+    margin-top: auto;
 }
 
-.footer p {
-    margin-bottom: 10px; /* Small gap between lines */
-}
+.footer h4 { color: white; margin-bottom: 15px; font-size: 20px; letter-spacing: 0.5px; }
 
-/* Removes gap from last item in footer */
-.footer p:last-child {
-    margin-bottom: 0;
-}
+.footer p { margin-bottom: 10px; font-size: 14.5px; }
 
 .footer a {
     color: #ffcc00;
     text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.footer a:hover { 
+    color: white; 
+    text-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
 }
 
 .warning {
     color: #ffab91;
     font-style: italic;
-    margin-top: 15px;
+    margin-top: 25px;
+    font-size: 13px;
+    background: rgba(0,0,0,0.2);
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px;
 }
 
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-    .card {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-    /* Stacking Order: Add Form (Right) goes on top of Reservation (Left) */
+    .container { flex-direction: column; }
+    .card { width: 100%; padding: 30px 20px; }
     #left-box { order: 2; }
     #right-box { order: 1; }
-    
-    .contact-container {
-        padding: 20px;
-    }
-    
-    /* Make table rows stack vertically on phone */
-    .contact-table, .contact-table tbody, .contact-table tr, .contact-table td {
-        display: block;
-        width: 100%;
-    }
-    
-    .tbl-label {
-        text-align: left;
-        padding-bottom: 5px;
-    }
+    .site-logo { max-width: 150px; }
+    .footer-logo { max-width: 120px; }
+    .contact-container { padding: 35px 20px; }
+    .header h1 { font-size: 24px; }
 }
